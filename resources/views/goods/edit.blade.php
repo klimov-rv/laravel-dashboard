@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Изменить') }}
         </h2>
     </x-slot>
 
@@ -13,54 +13,53 @@
                         {{ csrf_field() }}
                         <table class="">
                             <tr>
-                                <th class="bg-blue-100 text-left px-2 py-4">Name</th>
+                                <th class="bg-blue-100 text-left px-2 py-4">Название</th>
                                 <td class="bg-blue-100 text-left px-2 py-4">
                                     <i>{{ $cake->name }}</i>
                                 </td>
                                 <td class="bg-blue-100 text-left px-2 py-4">
-                                    <input type="text" name="name" value="{{ $cake->name }}">
+                                    <input type="text" name="name" value="{{ $cake->name }}" required>
                                     @if ($errors->has('name'))
                                         <div class="alert alert-danger">{{$errors->first('name')}}</div>
                                     @endif
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Price</th>
+                                <th class="px-2 py-4">Цена</th>
                                 <td class="px-2 py-4">
                                     <i>{{ $cake->price }}</i>
                                 </td>
                                 <td class="bg-blue-100 text-left px-2 py-4">
-                                    <input type="text" name="price" value="{{ $cake->price }}">
+                                    <input type="text" name="price" value="{{ $cake->price }}" required>
                                     @if ($errors->has('price'))
                                         <div class="alert alert-danger">{{ $errors->first('price') }}</div>
                                     @endif
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Article</th> 
+                                <th class="px-2 py-4">Артикул</th> 
                                 <td class="px-2 py-4">
                                     <i>{{ $cake->article }}</i>
                                 </td>
                                 <td class="bg-blue-100 text-left px-2 py-4">
-                                    <input type="text" name="article" value="{{ $cake->article }}">
+                                    <input type="text" name="article" value="{{ $cake->article }}" required>
                                     @if ($errors->has('article'))
                                         <div class="alert alert-danger">{{ $errors->first('article') }}</div>
                                     @endif
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Description</th> 
+                                <th class="px-2 py-4">Описание</th> 
                                 <td class="bg-blue-100 text-left px-2 py-4" colspan="2">
-                                    <textarea rows="10" cols="45" name="text">{{ $cake->text }}</textarea> 
+                                    <textarea rows="10" cols="45" name="text" required>{{ $cake->text }}</textarea> 
                                     @if ($errors->has('text'))
                                         <div class="alert alert-danger">{{ $errors->first('text') }}</div>
                                     @endif
                                 </td>
                             </tr> 
                         </table>
-                        
-                        <div class="p-6 border-t flex justify-end items-center"> 
-                            <button class="rounded-md  bg-gray-100 px-4 py-1 border" type="submit" value="сохранить">сохранить</button>
+                        <div class="py-6 border-t flex justify-end items-center"> 
+                            <button class="rounded-md bg-gray-100 px-4 py-1 border" type="submit" value="сохранить">сохранить</button>
                         </div>
                     </form>
                 </div>

@@ -18,18 +18,18 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('mainpage');;
  
-Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['verified'])->name('dashboard');
  
 
-Route::group(['prefix' => 'user', 'middleware' => 'auth'],
+Route::group(['prefix' => 'user', 'middleware' => 'verified'],
     function() {  
         Route::get('/{id}', [UserController::class, 'show']);
     }
 );
 
-Route::group(['prefix' => 'cakes', 'middleware' => 'auth'],
+Route::group(['prefix' => 'cakes', 'middleware' => 'verified'],
     function() { 
         Route::get('', [CakeController::class, 'index'])->name('cakes');
         Route::get('/create', [CakeController::class, 'create'])->name('goods.create');

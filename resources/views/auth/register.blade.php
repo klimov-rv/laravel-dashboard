@@ -12,8 +12,9 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            Регистрация закрыта
             <!-- Name -->
-            <div>
+            {{-- <div>
                 <x-label for="name" :value="__('Name')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
@@ -53,7 +54,7 @@
                 <x-button class="ml-4">
                     {{ __('Register') }}
                 </x-button>
-            </div>
+            </div> --}}
         </form>
     </x-auth-card>
 </x-guest-layout>

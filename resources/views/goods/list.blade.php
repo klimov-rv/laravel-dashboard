@@ -5,24 +5,21 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="pt-8">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 flex justify-between items-center">
                     <strong>Торты</strong>  
                     <a class="rounded-md px-4 py-1 border" href="{{ route('goods.create'); }}" alt="добавить">+</a>
                 </div>
-                <div class="p-6 bg-white border-b border-gray-200">
-
+                <div class="p-6 bg-white border-b border-gray-200"> 
                     <table class="mx-auto" style="width: 100%">
                             <tr> 
-                                <th>article</th>
-                                <th>name</th>
-                                <th>description</th>
-                                <th>price</th> 
-                                <th>
-                                    actions
-                                </th>
+                                <th>Арт.</th>
+                                <th>Название</th>
+                                <th>Описание</th>
+                                <th>Цена</th> 
+                                <th>Действия</th>
                             </tr>
                         @foreach ($goods as $good)
                             <tr> 
@@ -35,8 +32,8 @@
                                 <td>{{ $good->text }}</td>
                                 <td>{{ $good->price }}</td> 
                                 <td>
-                                    <a href="{{ route('goods.edit', ['cake' => $good]) }}">edit</a>
-                                    <a href="{{ route('goods.delete', ['id' => $good->id]) }}">delete</a>
+                                    <a href="{{ route('goods.edit', ['cake' => $good]) }}">редактировать</a>
+                                    <a href="{{ route('goods.delete', ['id' => $good->id]) }}">удалить</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -52,5 +49,7 @@
                 </style>
             </div>
         </div>
+    </div>
+    <div class="pt-8">
     </div>
 </x-app-layout>

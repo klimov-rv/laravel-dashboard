@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Сводная панель') }}
+            {{ __('Главная панель') }}
         </h2>
     </x-slot> 
     
@@ -12,27 +12,28 @@
                     <strong>Торты</strong>  
                     <a class="rounded-md px-4 py-1 border" href="{{ route('goods.create'); }}" alt="добавить">+</a>
                 </div>
-                <div class="p-6 bg-white border-b border-gray-200">
-
+                <div class="p-6 bg-white border-b border-gray-200"> 
                     <table class="mx-auto" style="width: 100%">
                             <tr> 
-                                <th>article</th>
-                                <th>name</th>
-                                <th>description</th>
-                                <th>price</th> 
-                                <th>
-                                    actions
-                                </th>
+                                <th>Арт.</th>
+                                <th>Название</th>
+                                <th>Описание</th>
+                                <th>Цена</th> 
+                                <th>Действия</th>
                             </tr>
                         @foreach ($goods as $good)
                             <tr> 
-                                <td>wd-100{{ $good->article }}</td>
+                                <td> 
+                                    <span class="text-gray-300 ">
+                                        wd-000{{ $good->article }}
+                                    </span>
+                                </td>
                                 <td>{{ $good->name }}</td>
                                 <td>{{ $good->text }}</td>
                                 <td>{{ $good->price }}</td> 
                                 <td>
-                                    <a href="{{ route('goods.edit', ['cake' => $good]) }}">edit</a>
-                                    <a href="{{ route('goods.delete', ['id' => $good->id]) }}">delete</a>
+                                    <a href="{{ route('goods.edit', ['cake' => $good]) }}">редактировать</a>
+                                    <a href="{{ route('goods.delete', ['id' => $good->id]) }}">удалить</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -65,8 +66,8 @@
                                 <td>{{ $good->price }}</td>
                                 
                                 <td>
-                                    <a href="{{ route('goods.edit', ['cake' => $good]) }}">edit</a>
-                                    <a href="{{ route('goods.delete', ['id' => $good->id]) }}">delete</a>
+                                    <a href="{{ route('goods.edit', ['cake' => $good]) }}">редактировать</a>
+                                    <a href="{{ route('goods.delete', ['id' => $good->id]) }}">удалить</a>
                                 </td>
                             </tr>
                         @endforeach
