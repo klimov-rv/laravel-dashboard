@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\CakeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,8 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+ 
+Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth'])->name('dashboard');
  
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'],
@@ -30,14 +29,14 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'],
     }
 );
 
-Route::group(['prefix' => 'books', 'middleware' => 'auth'],
+Route::group(['prefix' => 'cakes', 'middleware' => 'auth'],
     function() { 
-        Route::get('', [BookController::class, 'index'])->name('books');
-        Route::get('/create', [BookController::class, 'create'])->name('books.create');
-        Route::get('/edit/{book}', [BookController::class, 'edit'])->name('books.edit');
-        Route::post('/add/', [BookController::class, 'add'])->name('books.add');
-        Route::post('/save/{id}', [BookController::class, 'save'])->name('books.save');
-        Route::get('/delete/{id}', [BookController::class, 'delete'])->name('books.delete'); 
+        Route::get('', [CakeController::class, 'index'])->name('cakes');
+        Route::get('/create', [CakeController::class, 'create'])->name('goods.create');
+        Route::get('/edit/{cake}', [CakeController::class, 'edit'])->name('goods.edit');
+        Route::post('/add/', [CakeController::class, 'add'])->name('goods.add');
+        Route::post('/save/{id}', [CakeController::class, 'save'])->name('goods.save');
+        Route::get('/delete/{id}', [CakeController::class, 'delete'])->name('goods.delete'); 
     }
 );
 

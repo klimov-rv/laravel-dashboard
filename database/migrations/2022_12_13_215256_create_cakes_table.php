@@ -15,6 +15,11 @@ class CreateCakesTable extends Migration
     {
         Schema::create('cakes', function (Blueprint $table) {
             $table->id();
+            $table->integer('article');
+            $table->string('name');
+            $table->text('text');
+            $table->integer('price')->nullable();
+            $table->json('category')->nullable();
             $table->timestamps();
         });
     }
