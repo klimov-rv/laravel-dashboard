@@ -3,9 +3,13 @@
 /public/storage
 /storage/*.key
 /vendor
+/hello-node
+*.zip
 .env
+.env.example*
 .env.backup
 .phpunit.result.cache
+.htacces*
 docker-compose.override.yml
 Homestead.json
 Homestead.yaml
