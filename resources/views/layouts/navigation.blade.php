@@ -69,7 +69,10 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Панель') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('cakes')" :active="request()->routeIs('cakes')"> 
+                {{ __('Десерты Вали') }}
             </x-responsive-nav-link>
         </div>
 
