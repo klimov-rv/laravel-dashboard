@@ -13,8 +13,8 @@
                         {{ csrf_field() }}
                         <table class="">
                             <tr>
-                                <th class="bg-blue-100 text-left px-2 py-4">Название</th>
-                                <td class="bg-blue-100 text-left px-2 py-4">
+                                <th class="text-left px-2 py-4">Название</th>
+                                <td class="px-2 py-4">
                                     <i>{{ $cake->name }}</i>
                                 </td>
                                 <td class="bg-blue-100 text-left px-2 py-4">
@@ -25,7 +25,7 @@
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Цена</th>
+                                <th class="text-left px-2 py-4">Цена</th>
                                 <td class="px-2 py-4">
                                     <i>{{ $cake->price }}</i>
                                 </td>
@@ -37,7 +37,7 @@
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Артикул</th> 
+                                <th class="text-left px-2 py-4">Артикул</th> 
                                 <td class="px-2 py-4">
                                     <i>{{ $cake->article }}</i>
                                 </td>
@@ -49,7 +49,7 @@
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Описание</th> 
+                                <th class="text-left px-2 py-4">Описание</th> 
                                 <td class="bg-blue-100 text-left px-2 py-4" colspan="2">
                                     <textarea rows="10" cols="45" name="text" required>{{ $cake->text }}</textarea> 
                                     @if ($errors->has('text'))
@@ -59,7 +59,7 @@
                             </tr> 
                         </table>
                         <div class="py-6 border-t flex justify-end items-center"> 
-                            <button class="rounded-md bg-gray-100 px-4 py-1 border" type="submit" value="сохранить">сохранить</button>
+                            <button class="rounded-md bg-gray-100 px-4 py-1 border" type="submit" value="сохранить">сохранить изменения</button>
                         </div>
                     </form>
                 </div>

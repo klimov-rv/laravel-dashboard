@@ -13,7 +13,7 @@
                     <a class="rounded-md px-4 py-1 border" href="{{ route('goods.create'); }}" alt="добавить">+</a>
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200"> 
-                    <table class="mx-auto" style="width: 100%">
+                    <table class="mx-auto">
                             <tr> 
                                 <th>Арт.</th>
                                 <th>Название</th>

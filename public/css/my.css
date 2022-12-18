@@ -13,7 +13,8 @@
 
 .logo-kp img {
     min-width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     height: 100%;
 }
 
@@ -21,7 +22,6 @@
     color: white;
     padding: 5px;
     margin-left: 2px;
-    -webkit-animation: blink 1.3s linear infinite;
     animation: blink 1.3s linear infinite
 }
 

@@ -13,8 +13,8 @@
                         {{ csrf_field() }}
                         <table class="">
                             <tr>
-                                <th class="bg-blue-100 text-left px-2 py-4">Name</th> 
-                                <td class="bg-blue-100 text-left px-2 py-4">
+                                <th class="text-left px-2 py-4">Название</th> 
+                                <td class="bg-blue-100 px-2 py-4">
                                     <input type="text" name="name" value=" ">
                                     @if ($errors->has('name'))
                                         <div class="alert alert-danger">{{$errors->first('name')}}</div>
@@ -22,8 +22,8 @@
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Price</th> 
-                                <td class="bg-blue-100 text-left px-2 py-4">
+                                <th class="text-left px-2 py-4">Цена</th> 
+                                <td class="bg-blue-100 px-2 py-4">
                                     <input type="text" name="price" value=" ">
                                     @if ($errors->has('price'))
                                         <div class="alert alert-danger">{{ $errors->first('price') }}</div>
@@ -31,8 +31,8 @@
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Article</th> 
-                                <td class="bg-blue-100 text-left px-2 py-4">
+                                <th class="text-left px-2 py-4">Артикул</th> 
+                                <td class="bg-blue-100 px-2 py-4">
                                     <input type="text" name="article" value=" ">
                                     @if ($errors->has('article'))
                                         <div class="alert alert-danger">{{ $errors->first('article') }}</div>
@@ -40,8 +40,8 @@
                                 </td>
                             </tr> 
                             <tr>
-                                <th class="px-2 py-4">Description</th> 
-                                <td class="bg-blue-100 text-left px-2 py-4">
+                                <th class="text-left px-2 py-4">Описание</th> 
+                                <td class="bg-blue-100 px-2 py-4">
                                     <textarea rows="10" cols="45" name="text"></textarea> 
                                     @if ($errors->has('text'))
                                         <div class="alert alert-danger">{{ $errors->first('text') }}</div>
@@ -50,7 +50,7 @@
                             </tr> 
                         </table>
                         <div class="p-6 border-t flex justify-end items-center"> 
-                            <button class="rounded-md  bg-gray-100 px-4 py-1 border" type="submit" value="сохранить">сохранить</button>
+                            <button class="rounded-md  bg-gray-100 px-4 py-1 border" type="submit" value="сохранить">Создать торт</button>
                         </div>
                     </form>
                 </div>
