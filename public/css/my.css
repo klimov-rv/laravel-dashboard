@@ -9,6 +9,12 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    flex-wrap: nowrap;
+}
+
+.logo-kp.typed {
+
+    font-family: lores-22-serif, sans-serif;
 }
 
 .logo-kp img {
@@ -23,6 +29,14 @@
     padding: 5px;
     margin-left: 2px;
     animation: blink 1.3s linear infinite
+}
+
+.logo-kp .halfword {
+    flex: 1 1 50%;
+}
+
+.halfword.klmv {
+    text-align: right;
 }
 
 table {
@@ -82,6 +96,14 @@ body {
     overflow-x: hidden;
 }
 
+h1,
+h2,
+h3 { 
+    font-weight: bold;
+    font-size: 3.125rem;
+    line-height: 3.75rem;
+}
+
 section {
     width: 100%;
 }
@@ -94,6 +116,13 @@ section {
 .oh__inner {
     will-change: transform;
     display: inline-block;
+    color: white;
+}
+
+.oh__inner.text-xlg {
+    text-transform: uppercase;
+    font-weight: bold;
+
 }
 
 .js .loading:before,
@@ -135,6 +164,10 @@ a {
     cursor: pointer;
     outline: none;
     text-decoration: none;
+}
+
+.admin-panel a:hover {
+    color: inherit;
 }
 
 .hover-line {
@@ -260,13 +293,23 @@ a:focus-visible {
 }
 
 .content {
-    padding: 20px;
     z-index: 100;
     flex: 1 1 100%;
     max-width: 70%;
     margin: 0 auto;
     border-bottom: 0px solid var(--color-row-border);
     position: relative;
+}
+
+.content::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    border-radius: 1px;
+    background: rgba(128, 128, 128, 0.134);
 }
 
 .row {
@@ -276,9 +319,14 @@ a:focus-visible {
 }
 
 .row:hover {
+    position: relative;
     cursor: pointer;
-    background-color: var(--color-bg-row-hover);
-    border-bottom: 1px solid var(--color-row-border);
+    /* background: var(--color-bg-row-hover); */
+    /* border-bottom: 1px solid var(--color-bg-row-hover); */
+}
+
+.row:hover .cell--text:after {
+    opacity: 1;
 }
 
 .row--current {
@@ -293,29 +341,51 @@ a:focus-visible {
     min-height: 3.3em;
     position: relative;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
+}
+
+.cell--text {
+    position: relative;
+    padding-right: 5%;
+}
+
+.cell--text:after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    border-radius: 3px;
+    background: white;
+    opacity: 0;
+    transition: opacity .7s;
 }
 
 .cell__title,
 .preview__item-title {
     white-space: nowrap;
     margin: 0;
-    font-family: neue-haas-grotesk-display, sans-serif;
+    font-family: inherit;
     font-size: clamp(1.953rem, 4vw, 3.052rem);
     font-weight: 400;
     line-height: 1;
     position: relative;
+    letter-spacing: 3px;
 }
 
 .cell__title--switch {
     font-family: lores-22-serif, sans-serif;
     font-weight: 700;
+    letter-spacing: 3px;
 }
 
 .cell__title {
     grid-template-rows: 100% 100%;
     display: grid;
+    overflow: hidden;
+    position: absolute;
 }
 
 .cell--images {
@@ -325,6 +395,7 @@ a:focus-visible {
     place-content: center end;
     margin-left: auto;
     display: grid;
+    padding-left: 5%;
 }
 
 .cell__img {
@@ -343,6 +414,8 @@ a:focus-visible {
     border-radius: calc(var(--image-gap) / 3);
     background-position: 50%;
     background-size: cover;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 
 .cell__img-title {
@@ -383,6 +456,10 @@ a:focus-visible {
     left: 0;
 }
 
+.preview .cell__img-inner {
+    position: absolute;
+}
+
 .oh .preview {
     z-index: 200;
 }
@@ -402,6 +479,7 @@ a:focus-visible {
 
 .preview__close--show {
     pointer-events: auto;
+    color: white;
 }
 
 .preview__item {
@@ -413,12 +491,12 @@ a:focus-visible {
     align-content: center;
     place-items: center;
     display: grid;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .preview__item--current {
     pointer-events: auto;
-    height: 100vh;
+    height: auto;
     opacity: 1;
 }
 
@@ -426,6 +504,7 @@ a:focus-visible {
     font-family: lores-22-serif, sans-serif;
     font-size: clamp(1.563rem, 6vw, 3.815rem);
     font-weight: 700;
+    line-height: 3em;
 }
 
 .grid {
@@ -441,14 +520,72 @@ a:focus-visible {
     position: relative;
 }
 
+.grid-8cols {
+    grid-template-columns: repeat(8, calc(var(--img-size) / 2));
+    grid-template-rows: repeat(3, calc(var(--img-size) / 2));
+}
+.grid-5cols {
+    grid-template-columns: repeat(5, calc(var(--img-size) / 2));
+    grid-template-rows: repeat(3, calc(var(--img-size) / 2));
+}
+
 .grid .cell__img {
     width: var(--img-size-large);
 }
 
 .dark {
-
     --color-text: #fff;
 }
+
+.text-xlg {
+    font-size: 3.125rem;
+    line-height: 3.75rem;
+}
+
+.styled__back {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15%;
+    background: #1b221e;
+}
+
+.styled__back a {
+    color: white;
+}
+
+.preview .persp {
+    perspective: 1000px;
+    width: 100%;
+    pointer-events: all;
+    position: relative;
+}
+
+.preview .persp-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease 0s;
+    transform-style: preserve-3d;
+}
+
+.preview .persp:hover .persp-box {
+    transform: rotateY(180deg);
+}
+
+.preview .persp .styled__front {
+    transform: rotateX(0deg);
+    background-size: contain;
+}
+
+
+.preview .persp .styled__back {
+    display: flex;
+    transform: rotateY(180deg);
+    background-size: contain;
+    color: white;
+}
+
 
 @media screen and (min-width: 61em) {
     .frame {
@@ -509,15 +646,15 @@ a:focus-visible {
 
 @media (min-width: 1024px) {
     .logo-kp {
-        width: 500px;
-        font-size: 71px;
+        width: 100%;
+        font-size: 113px;
     }
 
     .cell {
-        min-height: 10.3em;
+        min-height: 8.3em;
     }
 
     .content {
-        max-width: 50%;
+        max-width: 70%;
     }
 }
