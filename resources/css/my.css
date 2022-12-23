@@ -721,8 +721,9 @@ a:focus-visible {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    top: 59%;
-    left: 30%;
+
+    bottom: 3px;
+    right: -10px;
     border-radius: 5px;
     color: black;
     padding: 10px;
@@ -768,6 +769,7 @@ a:focus-visible {
     transform: rotateY(180deg);
     background-size: contain;
     color: white;
+    line-height: 1em;
 }
 
 
