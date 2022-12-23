@@ -10,6 +10,7 @@ mix.options({
 });
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/animate.js', 'public/js')
     .postCss('resources/css/tailwind.css', 'public/css', [
         //
     ])

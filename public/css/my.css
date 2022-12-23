@@ -1,30 +1,86 @@
+body {
+    --secondary-ff: lores-22-serif, sans-serif;
+}
+
+main {
+    background: #111827;
+}
+
 .logo-kp {
     height: 50px;
     font-size: 31px;
     min-height: 1.3em;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     color: lightseagreen;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     flex-wrap: nowrap;
+    cursor: pointer;
 }
 
 .logo-kp.typed {
 
-    font-family: lores-22-serif, sans-serif;
+    font-family: var(--secondary-ff);
 }
 
-.logo-kp img {
-    min-width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    height: 100%;
+.logo-kp .klmv {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
+
+.logo-kp .klmv .klmv_animate {
+    position: relative;
+    list-style: none;
+}
+
+.logo-kp .klmv .klmv_animate a {
+    display: block;
+    position: relative;
+    font-size: 1em;
+    line-height: 1em;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.logo-kp .klmv .klmv_animate a::before {
+    content: attr(data-text);
+    font-size: 1em;
+    text-align: right;
+    line-height: 1em;
+    height: 1em;
+    position: absolute;
+    right: 0;
+    width: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    color: white;
+    -webkit-text-stroke: 1px white;
+    overflow: hidden;
+    transition: 1s;
+
+}
+
+.open-menu .logo-kp .klmv a::before,
+.logo-kp .klmv a:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 25px white);
+}
+
+/* .logo-kp:hover .klmv a::before {
+
+    animation-name: hoverlogo2;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-delay: .5s; 
+} */
 
 .logo-kp .white-dash {
+    background-color: #111827;
     color: white;
     padding: 5px;
     margin-left: 2px;
@@ -35,8 +91,41 @@
     flex: 1 1 50%;
 }
 
+
 .halfword.klmv {
     text-align: right;
+    position: relative;
+}
+
+.halfword.klmv .arrow-menu {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: all .5s;
+    transform: translateX(50%);
+    height: 1em;
+    width: 1em;
+    font-size: .3em;
+}
+
+.logo-kp:hover .white-dash {
+    display: none;
+}
+
+.logo-kp:hover .halfword.klmv .arrow-menu {
+    opacity: 1;
+    bottom: -30px;
+}
+
+.open-menu .halfword.klmv .arrow-menu {
+    opacity: 0;
 }
 
 table {
@@ -47,6 +136,37 @@ table {
 table tr {
     width: 100%;
     text-align: left;
+}
+
+@keyframes hoverlogo1 {
+    0% {
+        width: 100%;
+    }
+
+    50% {
+        width: 0;
+        color: white;
+    }
+
+    51% {
+        width: 0;
+        color: #111827;
+    }
+
+    100% {
+        width: 100%;
+        color: #111827;
+    }
+}
+
+@keyframes hoverlogo2 {
+    0% {
+        width: 0
+    }
+
+    100% {
+        width: 100%
+    }
 }
 
 @keyframes blink {
@@ -98,7 +218,7 @@ body {
 
 h1,
 h2,
-h3 { 
+h3 {
     font-weight: bold;
     font-size: 3.125rem;
     line-height: 3.75rem;
@@ -119,7 +239,7 @@ section {
     color: white;
 }
 
-.oh__inner.text-xlg {
+.oh__inner.text-3x {
     text-transform: uppercase;
     font-weight: bold;
 
@@ -271,9 +391,10 @@ a:focus-visible {
 
 .intro {
     flex: 1 1 50%;
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
+    align-items: center;
     display: flex;
-    padding: 1rem var(--padding-sides) 3rem;
+    padding: 3rem var(--padding-sides);
 }
 
 .intro p {
@@ -299,8 +420,22 @@ a:focus-visible {
     margin: 0 auto;
     border-bottom: 0px solid var(--color-row-border);
     position: relative;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+
 }
 
+.content .row:last-child {
+    margin-bottom: 3em;
+}
+
+.intro.open-menu+.content {
+    max-height: 100vh;
+}
+
+/* 
 .content::after {
     content: '';
     position: absolute;
@@ -310,7 +445,7 @@ a:focus-visible {
     height: 100%;
     border-radius: 1px;
     background: rgba(128, 128, 128, 0.134);
-}
+} */
 
 .row {
     z-index: 1;
@@ -338,16 +473,18 @@ a:focus-visible {
     width: 100%;
     height: 50px;
     font-size: 15px;
-    min-height: 3.3em;
     position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
 }
 
 .cell--text {
     position: relative;
-    padding-right: 5%;
+    margin-right: 50px;
+    padding-right: 50px;
 }
 
 .cell--text:after {
@@ -376,7 +513,7 @@ a:focus-visible {
 }
 
 .cell__title--switch {
-    font-family: lores-22-serif, sans-serif;
+    font-family: var(--secondary-ff);
     font-weight: 700;
     letter-spacing: 3px;
 }
@@ -395,7 +532,6 @@ a:focus-visible {
     place-content: center start;
     margin-left: auto;
     display: grid;
-    padding-left: 5%;
 }
 
 .cell__img {
@@ -431,6 +567,11 @@ a:focus-visible {
     display: none;
 }
 
+.row .cell--text,
+.row .cell--images {
+    flex: 0 0 50%;
+}
+
 .page-footer {
     padding: 10vw 10vw 5vw;
 }
@@ -454,6 +595,7 @@ a:focus-visible {
     position: fixed;
     top: 0;
     left: 0;
+    overflow: hidden;
 }
 
 .preview .cell__img-inner {
@@ -491,17 +633,17 @@ a:focus-visible {
     align-content: center;
     place-items: center;
     display: grid;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .preview__item--current {
     pointer-events: auto;
-    height: auto;
+    height: 100vh;
     opacity: 1;
 }
 
 .preview__item-title {
-    font-family: lores-22-serif, sans-serif;
+    font-family: var(--secondary-ff);
     font-size: clamp(1.563rem, 6vw, 3.815rem);
     font-weight: 700;
     line-height: 3em;
@@ -518,12 +660,24 @@ a:focus-visible {
     justify-items: center;
     display: grid;
     position: relative;
+    padding-bottom: 30px;
 }
 
 .grid-8cols {
     grid-template-columns: repeat(8, calc(var(--img-size) / 2));
     grid-template-rows: repeat(3, calc(var(--img-size) / 2));
 }
+
+.grid-2cols {
+    grid-template-columns: repeat(2, calc(var(--img-size)));
+    grid-template-rows: repeat(1, calc(var(--img-size)));
+}
+
+.grid-3cols {
+    grid-template-columns: repeat(3, calc(var(--img-size)));
+    grid-template-rows: repeat(2, calc(var(--img-size)));
+}
+
 .grid-5cols {
     grid-template-columns: repeat(5, calc(var(--img-size) / 2));
     grid-template-rows: repeat(3, calc(var(--img-size) / 2));
@@ -537,21 +691,51 @@ a:focus-visible {
     --color-text: #fff;
 }
 
-.text-xlg {
-    font-size: 3.125rem;
+.text-3x {
+    font-size: 1.525rem;
     line-height: 3.75rem;
+    position: relative;
+    top: 1pxy;
 }
 
 .styled__back {
     display: none;
-    justify-content: center;
-    align-items: center;
     padding: 15%;
     background: #1b221e;
+    cursor: pointer;
+    color: white;
 }
 
-.styled__back a {
-    color: white;
+.styled__back a.btn {
+    color: rgb(61, 61, 61);
+}
+
+.persp-box a.case-link {
+    background-color: #f7f7f7;
+}
+
+.case-link {
+    position: absolute;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    top: 59%;
+    left: 30%;
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+    box-shadow: 4px 4px 8px 0px rgb(34 60 80 / 20%);
+}
+
+.case-link .fa {
+    font-size: 9px;
+}
+
+.case-text {
+    margin-top: 1px;
+    margin-left: 5px;
 }
 
 .preview .persp {
@@ -605,9 +789,7 @@ a:focus-visible {
         font-size: 39px;
     }
 
-    .cell {
-        min-height: 4.3em;
-    }
+    .cell {}
 
     .logo-kp .white-dash {
         padding: 6px;
@@ -620,9 +802,7 @@ a:focus-visible {
         font-size: 49px;
     }
 
-    .cell {
-        min-height: 5.3em;
-    }
+    .cell {}
 
     .logo-kp .white-dash {
         padding: 9px;
@@ -635,9 +815,7 @@ a:focus-visible {
         font-size: 63px;
     }
 
-    .cell {
-        min-height: 7.3em;
-    }
+    .cell {}
 
     .logo-kp .white-dash {
         padding: 12px;
@@ -650,9 +828,7 @@ a:focus-visible {
         font-size: 113px;
     }
 
-    .cell {
-        min-height: 8.3em;
-    }
+    .cell {}
 
     .content {
         max-width: 70%;

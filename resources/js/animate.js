@@ -225,7 +225,6 @@
       var hostname = getHostname();
       var port = getPort();
       var protocol = HMR_SECURE || location.protocol == "https:" && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? "wss" : "ws";
-      var ws = new WebSocket(protocol + "://" + hostname + (port ? ":" + port : "") + "/"); // Web extension context
       var extCtx = typeof chrome === "undefined" ? typeof browser === "undefined" ? null : browser : chrome; // Safari doesn't support sourceURL in error stacks.
       // eval may also be disabled via CSP, so do a quick check.
       var supportsSourceURL = false;
@@ -234,48 +233,7 @@
       } catch (err) {
           supportsSourceURL = err.stack.includes("test.js");
       } // $FlowFixMe
-      ws.onmessage = async function(event) {
-          checkedAssets = {} /*: {|[string]: boolean|} */ ;
-          acceptedAssets = {} /*: {|[string]: boolean|} */ ;
-          assetsToAccept = [];
-          var data = JSON.parse(event.data);
-          if (data.type === "update") {
-              // Remove error overlay if there is one
-              if (typeof document !== "undefined") removeErrorOverlay();
-              let assets = data.assets.filter((asset)=>asset.envHash === HMR_ENV_HASH); // Handle HMR Update
-              let handled = assets.every((asset)=>{
-                  return asset.type === "css" || asset.type === "js" && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
-              });
-              if (handled) {
-                  console.clear(); // Dispatch custom event so other runtimes (e.g React Refresh) are aware.
-                  if (typeof window !== "undefined" && typeof CustomEvent !== "undefined") window.dispatchEvent(new CustomEvent("parcelhmraccept"));
-                  await hmrApplyUpdates(assets);
-                  for(var i = 0; i < assetsToAccept.length; i++){
-                      var id = assetsToAccept[i][1];
-                      if (!acceptedAssets[id]) hmrAcceptRun(assetsToAccept[i][0], id);
-                  }
-              } else fullReload();
-          }
-          if (data.type === "error") {
-              // Log parcel errors to console
-              for (let ansiDiagnostic of data.diagnostics.ansi){
-                  let stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
-                  console.error("\uD83D\uDEA8 [parcel]: " + ansiDiagnostic.message + "\n" + stack + "\n\n" + ansiDiagnostic.hints.join("\n"));
-              }
-              if (typeof document !== "undefined") {
-                  // Render the fancy html overlay
-                  removeErrorOverlay();
-                  var overlay = createErrorOverlay(data.diagnostics.html); // $FlowFixMe
-                  document.body.appendChild(overlay);
-              }
-          }
-      };
-      ws.onerror = function(e) {
-          console.error(e.message);
-      };
-      ws.onclose = function() {
-          console.warn("[parcel] \uD83D\uDEA8 Connection to the HMR server was lost");
-      };
+      
   }
   function removeErrorOverlay() {
       var overlay = document.getElementById(OVERLAY_ID);
