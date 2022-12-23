@@ -214,7 +214,7 @@
                     <div class="cell__img persp">
                         <div class="persp-box"> 
                             <div class="cell__img-inner styled__front" style="background-image: url(images/design4.jpg)"></div>
-                            <div class="cell__img-inner styled__back" >User Interface
+                            <div class="cell__img-inner styled__back">User Interface
                                 
                                 <a href="/portfolio/" class="case-link">  
                                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -238,13 +238,23 @@
                     <div class="cell__img persp">
                         <div class="persp-box"> 
                             <div class="cell__img-inner styled__front" style="background-image: url(images/audit1.png)"></div>
-                            <div class="cell__img-inner styled__back" >Аудит проекта</div>
+                            <div class="cell__img-inner styled__back" >Аудит проекта 
+                                <a href="/contacts/" class="case-link">  
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    <div class="case-text">Contact me </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="cell__img persp">
                         <div class="persp-box"> 
                             <div class="cell__img-inner styled__front" style="background-image: url(images/conversation1.png)"></div>
-                            <div class="cell__img-inner styled__back" >Менторство</div>
+                            <div class="cell__img-inner styled__back" >Менторство
+                                <a href="/contacts/" class="case-link">  
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    <div class="case-text">Contact me </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -276,7 +286,7 @@
                     <div class="cell__img persp">
                         <div class="persp-box"> 
                             <div class="cell__img-inner styled__front" style="background-image: url(images/icons/jquery-10-1175155.png);background-color: transparent;background-size: 82%;background-repeat: no-repeat;"></div>
-                            <div class="cell__img-inner styled__back" >jQuery-эффекты, AJAX, chaining
+                            <div class="cell__img-inner styled__back" >jQuery
                                 
                                 <a href="/portfolio/" class="case-link">  
                                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -484,7 +494,12 @@
                     <div class="cell__img persp">
                         <div class="persp-box"> 
                             <div class="cell__img-inner styled__front" style="background-image: url(images/design6.jpg)"></div>
-                            <div class="cell__img-inner styled__back" > Имиджевый сайт</div>
+                            <div class="cell__img-inner styled__back" > Cовременный дизайн для вашего сайта.
+                                <a href="/portfolio/" class="case-link">  
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    <div class="case-text">Cases </div>
+                                </a>
+                            </div>
                         </div>
                     </div> 
                 </div>
