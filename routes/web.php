@@ -19,10 +19,13 @@ use App\Http\Controllers\ImageController;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('mainpage');;
+})->name('mainpage');
+
+Route::get('/portfolio', function () {
+    return view('portfolio');
+})->name('portfolio');
 
 Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['verified'])->name('dashboard');
-
 
 Route::group(
     ['prefix' => 'user', 'middleware' => 'verified'],
@@ -48,7 +51,7 @@ Route::group(
     }
 );
 
-Route::post('/image/upload', [ImageController::class, 'upload'])->name('image.upload');
+// Route::post('/image/upload', [ImageController::class, 'upload'])->name('image.upload');
 
 Route::get('access-denied', function () {
     return view('user.access-denied');

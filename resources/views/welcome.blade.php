@@ -32,6 +32,8 @@
 
 <body class="antialiased loading"> 
     <main class="relative flex flex-col justify-center min-h-screen sm:items-center py-4 sm:pt-0"> 
+        
+        <div class="myphoto" style="background: url(images/555.jpg) no-repeat center center /cover transparent"></div>
         <section class="intro"> 
             <div class="logo-kp">
                 <span class="halfword klmv">
@@ -417,7 +419,7 @@
                         <div class="persp-box"> 
                             <div class="cell__img-inner styled__front" style="background-image: url(images/icons/icons8-visual-studio-code-2019-512.png);background-color: transparent;background-size: 99%;background-repeat: no-repeat;"></div>
                             <div class="cell__img-inner styled__back" style="background-color: #0277bd">
-                                <i class="fa fa-heart" aria-hidden="true"></i>  любимая IDE
+                                <i class="fa fa-heart" aria-hidden="true"></i>  IDE
                             </div>
                         </div>
                     </div>

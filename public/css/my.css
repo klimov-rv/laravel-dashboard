@@ -4,6 +4,18 @@ body {
 
 main {
     background: #111827;
+    position: relative;
+}
+.myphoto {
+    opacity: .17 ;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.admin-panel main {
+    background-color: #f3f4f6;
 }
 
 .logo-kp {
@@ -44,7 +56,7 @@ main {
     font-size: 1em;
     line-height: 1em;
     color: transparent;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: .5px #969696;
 }
 
 .logo-kp .klmv .klmv_animate a::before {
@@ -80,11 +92,13 @@ main {
 } */
 
 .logo-kp .white-dash {
-    background-color: #111827;
+    display: none;
+    /* background-color: #111827; */
     color: white;
     padding: 5px;
     margin-left: 2px;
-    animation: blink 1.3s linear infinite
+    /* -webkit-animation: blink 1.3s linear infinite;
+    animation: blink 1.3s linear infinite */
 }
 
 .logo-kp .halfword {
@@ -106,7 +120,7 @@ main {
     color: white;
     opacity: 0;
     position: absolute;
-    bottom: 0;
+    bottom: -20px;
     right: 0;
     transition: all .5s;
     transform: translateX(50%);
@@ -121,7 +135,7 @@ main {
 
 .logo-kp:hover .halfword.klmv .arrow-menu {
     opacity: 1;
-    bottom: -30px;
+    bottom: -50px;
 }
 
 .open-menu .halfword.klmv .arrow-menu {
@@ -477,8 +491,8 @@ a:focus-visible {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 0.9em;
-    margin-bottom: 0.9em;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
 }
 
 .cell--text {
@@ -713,7 +727,9 @@ a:focus-visible {
 .persp-box a.case-link {
     background-color: #f7f7f7;
 }
-
+.persp-box a.case-link:hover {
+    color: rgb(0, 93, 95); 
+}
 .case-link {
     position: absolute;
     background-color: #f7f7f7;
@@ -750,7 +766,7 @@ a:focus-visible {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s ease 0s;
+    transition: transform 0.3s ease 0s;
     transform-style: preserve-3d;
 }
 
