@@ -11,6 +11,7 @@
     <meta name="keywords" content="frontend, web, developer, web-sites, javaScript, html, css, nodejs, vue, php, SQL">
     <meta name="author" content="Klimov Roman">
     <link rel="shortcut icon" href="favicon.824cf0c5.ico">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ URL::asset('css/fonts.css') }} ">
