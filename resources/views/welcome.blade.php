@@ -14,7 +14,7 @@
 
     <title>Panel | klimovproject</title>
 
-    <meta name="description" content="A frontend engineer site. My own project.">
+    <meta name="description" content="A frontend engineer presentation site. Klimov Roman personal project -.-">
     <meta name="keywords" content="frontend, web, developer, web-sites, javaScript, html, css, nodejs, vue, php, SQL">
     <meta name="author" content="Klimov Roman">
     <link rel="shortcut icon" href="favicon.824cf0c5.ico">
@@ -30,10 +30,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
 </head>
 
-<body class="antialiased loading"> 
+<body class="antialiased loading mainpage"> 
+
+    <div id="preloader">
+        <div class="loader_line"></div>
+    </div>
     <main class="relative flex flex-col justify-center min-h-screen sm:items-center py-4 sm:pt-0"> 
         
-        <div class="myphoto" style="background: url(images/555.jpg) no-repeat center center /cover transparent"></div>
+        <div class="myphoto" style="background: url(images/me-1000.jpg) no-repeat center center /cover transparent"></div>
         <section class="intro"> 
             <div class="logo-kp">
                 <span class="halfword klmv">
@@ -405,7 +409,7 @@
                     <div class="cell__img persp">
                         <div class="persp-box"> 
                             <div class="cell__img-inner styled__front" style="background-image: url(images/icons/icons8-git-512.png);background-color: transparent;"></div>
-                            <div class="cell__img-inner styled__back" ><a href="https://github.com/klimov-rv" target="_blank" rel="noopener noreferrer">My Github <i class="fab fa-github-alt"></i></a>  
+                            <div class="cell__img-inner styled__back" tyle="background-color: transparent;"><a href="https://github.com/klimov-rv" target="_blank" rel="noopener noreferrer">My Github <i class="fab fa-github-alt"></i></a>  
                                 
                                 <a href="/portfolio/" class="case-link">  
                                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -430,6 +434,13 @@
                             <div class="cell__img-inner styled__back" style="background-image: url(images/icons/icons8-figma.gif);" > </div>
                         </div>
                     </div> 
+
+                    
+                    <a href="/portfolio/" class="cell__img case-link">  
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        <div class="case-text">Смотреть портфолио </div>
+                    </a> 
+
                 </div>
             </div>
             <!-- /2 -->
@@ -479,6 +490,11 @@
                             <div class="cell__img-inner styled__back"  style="background-image: linear-gradient(230deg, rgba(125, 133, 192, 0.3), rgba(239, 26, 26, 0.5));"> Ruby on Rails </div>
                         </div>
                     </div>
+                    
+                    <a href="/portfolio/" class="cell__img case-link">  
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        <div class="case-text">Смотреть портфолио </div>
+                    </a>
                 </div>
             </div>
             <!-- /3 -->
