@@ -1,3 +1,3 @@
-<script type="text/javascript">
-    window.location = 'https://klimovproject.online/portfolio/';
-</script>
+@php
+    return File::get(public_path() . '/test/index.html');
+@endphp

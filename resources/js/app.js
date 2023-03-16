@@ -29,6 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementsByClassName('intro')[0].classList.toggle('open-menu');
     });
 
+    function scrollFunction() {
+        if (event.originalEvent.wheelDelta >= 0) {
+            console.log('Scroll up');
+        }
+        else {
+            console.log('Scroll down');
+        }
+    }
+
+    document.getElementsByClassName('logo-kp')[0].addEventListener('click', function () {
+        document.getElementsByClassName('intro')[0].classList.toggle('open-menu');
+    });
+
     window.onwheel = e => {
         if (e.deltaY >= 0) {
             document.getElementsByClassName('intro')[0].classList.add('open-menu');
@@ -39,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     let touchstartY = 0
-    let touchendY = 0
 
     function checkDirection() {
         if (touchendY < touchstartY) document.getElementsByClassName('intro')[0].classList.add('open-menu');
